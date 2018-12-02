@@ -1,0 +1,48 @@
+version: "2"
+services:
+    www:
+        build: .
+        ports: 
+            - "8007:80"
+        volumes:
+            - ./www:/var/www/html/
+        links:
+            - db
+        networks:
+            - default
+    portainer:
+        image: portainer/portainer
+        command: -H unix:///var/run/docker.sock
+        restart: always
+        ports:
+            - "9009:9000"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - portainer_data:/data
+    db:
+        image: mysql:5.7
+        ports: 
+            - "3306:3306"
+        environment:
+            MYSQL_DATABASE: myDb
+            MYSQL_USER: user
+            MYSQL_PASSWORD: R1234-56
+            MYSQL_ROOT_PASSWORD: R1234-56
+        volumes:
+            - ./dump:/docker-entrypoint-initdb.d
+            - persistent:/var/lib/mysql
+        networks:
+            - default
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - db:db
+        ports:
+            - 8008:80
+        environment:
+            MYSQL_USER: user
+            MYSQL_PASSWORD: R1234-56
+            MYSQL_ROOT_PASSWORD: R1234-56
+volumes:
+    persistent:
+    portainer_data:
