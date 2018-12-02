@@ -1,9 +1,9 @@
 <html>
  <head>
-  <title>Hello...</title>
+  <title>Hello and welcome</title>
 
   <meta charset="utf-8"> 
-
+  <meta name="author" content="Benjamin Bruyns">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -17,7 +17,7 @@
     // Connexion et sélection de la base
     $conn = mysqli_connect('db', 'user', 'R1234-56', "myDb");
 
-    $query = 'SELECT * From bmw_adres';
+    $query = 'SELECT * From Person';
     $result = mysqli_query($conn, $query);
 
     echo '<table class="table table-striped">';
@@ -32,8 +32,6 @@
         echo '</tr>';
     }
     echo '</table>';
-
-    /* Libération du jeu de résultats */
     $result->close();
 
     mysqli_close($conn);
