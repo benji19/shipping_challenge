@@ -112,8 +112,8 @@ Wat heb je nodig
 
       - $ mkdir docker-hub 
       - $ cd docker-hub
-      - docker-hub$ git clone https://github.com/benji19/shipchal.git
-      - docker-hub$ cd shipchal      
+      - docker-hub$ git clone https://github.com/benji19/shipping_challenge.git
+      - docker-hub$ cd shipping_challenge      
    - onder de map dump vind je een sql file in deze file kan je u eigen sql statements plaatsen
    - en onder www vind je een index.php deze kan je zelf aanpassen
    - na persoonlijke aan passingen voor je het docker commando uit om de .yaml te activeren
