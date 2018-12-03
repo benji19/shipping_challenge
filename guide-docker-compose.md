@@ -3,7 +3,7 @@ Wat heb je nodig
 
  1️⃣ Step 1 — make a clean virtual machine:
  
-   - maak een vituwele machine met ubuntu of debian en geef 2 netwerk kaarten 1 op bridge en de andere op host-only
+   - maak een virtuele machine met ubuntu of debian en geef 2 netwerk kaarten 1 op bridge en de andere op host-only
  
  2️⃣ Step 2 — configer netplan to conect- with putty:  
 
